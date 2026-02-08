@@ -27,7 +27,6 @@ print(max)
 print(min)
 
 #count frequency
-count=[0]*len(arr)
 visited=[False]*len(arr)
 for i in range(0,len(arr)):
     if visited[i]:
@@ -37,10 +36,10 @@ for i in range(0,len(arr)):
         if arr[i]==arr[j]:
             freq+=1
             visited[j]=True
-    count[i]=freq
-for i in range(0,len(arr),1):
     if not visited[i]:
-        print(arr[i],"=",count[i])
+        print(arr[i],"=",freq)
+
+    
 
 
 #to find the second largest
@@ -53,3 +52,13 @@ for i in range(len(arr)):
     if(arr[i]!=largest and slarge<arr[i]):
         slarge=arr[i]
 print("slarge",slarge)
+
+#optimized
+largest=slarge=float('inf')
+for i in arr:
+    if(x>largest):
+        x=largest
+        slarge=largest
+    elif(x>slarge and x!=largest):
+        slarge=x
+    print("slarge",slarge)
