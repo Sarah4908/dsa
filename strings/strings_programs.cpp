@@ -43,6 +43,7 @@ void countfre(const string &str){
                     visited[j]=true;
                 }
             }
+            visited[l]=true;
             cout<<str[l]<<'='<<fre<<endl;
         }
     }
@@ -104,6 +105,6 @@ int main(){
 
     reversestr(str);
     
-    
+    anagraml();
     
 }
