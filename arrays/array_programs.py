@@ -54,11 +54,14 @@ for i in range(len(arr)):
 print("slarge",slarge)
 
 #optimized
-largest=slarge=float('inf')
-for i in arr:
-    if(x>largest):
-        x=largest
-        slarge=largest
-    elif(x>slarge and x!=largest):
-        slarge=x
-    print("slarge",slarge)
+largest = float('-inf')
+slarge = float('-inf')
+
+for num in arr:
+    if num > largest:
+        slarge = largest
+        largest = num
+    elif num > slarge and num != largest:
+        slarge = num
+
+print("second largest:", slarge)

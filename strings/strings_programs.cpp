@@ -58,7 +58,7 @@ void countfre1(const string &str){
     for(char c: str){
         if(fre[tolower(c)]!=0){
             cout<<c<<"="<<fre[tolower(c)]<<endl;
-            fre[tolower(c)]!=0;
+            fre[tolower(c)]=0;
         }
     }
 
@@ -67,26 +67,29 @@ void countfre1(const string &str){
 void anagraml(){
     string str1="silent";
     string str2="listen";
-    int fre1[256]={0};
-    int fre2[256]={0};
-    if(str1.length()==str2.length()){
-        for(char c: str1){
-            fre1[c]++;
-        }
-        for(char c: str2){
-            fre2[c]++;
-        }
-        for(char c: str1){
-            if(fre1[c]!=fre2[c]){
-                cout<<"not";
-                return;
-            } 
-        }
-        cout<<"anagram"<<endl;
-    }
-    else cout<<"not";
 
+    if(str1.length() != str2.length()){
+        cout << "not";
+        return;
+    }
+
+    int fre[256] = {0};
+
+    for(int i = 0; i < str1.length(); i++){
+        fre[str1[i]]++;
+        fre[str2[i]]--;
+    }
+
+    for(int i = 0; i < 256; i++){
+        if(fre[i] != 0){
+            cout << "not";
+            return;
+        }
+    }
+
+    cout << "anagram" << endl;
 }
+
 
 
 int main(){
