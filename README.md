@@ -27,6 +27,11 @@ for improving problem-solving skills and preparing for coding interviews.
 - Valid Anagram
 - Contains Duplicate
 
+### Sorting
+- Bubble Sort
+- Insertion Sort
+- Selection Sort
+
 ## Goal
 - Build strong fundamentals
 - Practice consistently
